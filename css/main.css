@@ -164,11 +164,43 @@ section:last-child {
   position: relative;
   display: block;
   margin-bottom: 50px;
+  -webkit-animation: img_scale 1.5s infinite ease-out;
+          animation: img_scale 1.5s infinite ease-out;
 }
 @media (min-width: 1140px) {
   .section__img {
     margin-bottom: 0;
     width: 400px;
+    -webkit-animation: unset;
+            animation: unset;
+  }
+}
+@-webkit-keyframes img_scale {
+  50% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  90% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes img_scale {
+  50% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  90% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 .section__desc {

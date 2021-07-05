@@ -173,10 +173,24 @@ section:last-child {
   position: relative;
   display: block;
   margin-bottom: 50px;
+  animation: img_scale 1.5s infinite ease-out;
 
   @media (min-width: 1140px) {
     margin-bottom: 0;
     width: 400px;
+    animation: unset;
+  }
+}
+
+@keyframes img_scale {
+  50% {
+    transform: scale(1.03);
+  }
+  90% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
