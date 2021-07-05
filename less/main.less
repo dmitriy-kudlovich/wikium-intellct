@@ -13,6 +13,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: #335890;
   font-size: 22px;
+  scroll-behavior: smooth;
 }
 
 a,
@@ -117,6 +118,7 @@ cite {
 }
 
 .header {
+  position: relative;
   padding: 100px 0;
   background-color: #6039aa;
   color: #fff;
@@ -138,7 +140,11 @@ h1 {
 }
 
 section {
-  margin-bottom: 150px;
+  padding-top: 80px;
+
+  @media (min-width: 1140px) {
+    margin-bottom: 150px;
+  }
 }
 
 section:last-child {
@@ -150,7 +156,11 @@ section:last-child {
 }
 
 .main {
-  padding: 120px 0;
+  padding-bottom: 100px;
+
+  @media (min-width: 1140px) {
+    padding: 120px 0;
+  }
 }
 
 .section__title {
@@ -247,7 +257,7 @@ strong {
 }
 
 .footer {
-  padding: 70px 0;
+  padding: 72px 0;
   background-color: #335890;
 }
 
@@ -344,5 +354,110 @@ strong {
 
   @media (min-width: 768px) {
     display: block;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 100px 15px 30px 15px;
+  width: 100%;
+  background-color: #fff;
+  color: #fff;
+  z-index: 10;
+  -webkit-transition: right 0.2s;
+  transition: right 0.2s;
+}
+
+.mobile-menu__active {
+  right: 0;
+}
+
+.button--delete {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.button--delete::after {
+  content: "";
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 5px;
+  bottom: 5px;
+  left: 13px;
+  right: 13px;
+  background-color: #6039aa;
+  z-index: 2;
+}
+
+.button--delete::before {
+  content: "";
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  top: 5px;
+  bottom: 5px;
+  left: 13px;
+  right: 13px;
+  background-color: #6039aa;
+  z-index: 2;
+}
+
+.mobile-menu__link {
+  display: block;
+  margin-bottom: 50px;
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.hamburger-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 15px;
+  background-color: #6039aa;
+  z-index: 2;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.hamburger {
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+
+.hamburger__line {
+  display: block;
+  margin-bottom: 8px;
+  width: 45px;
+  height: 6px;
+  background-color: #fff;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
